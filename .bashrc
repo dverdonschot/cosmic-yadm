@@ -25,3 +25,9 @@ fi
 unset rc
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# initializing Tmux
+[ "$EUID" -ne 0 ] && [ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
+# Loading ohh my posh config
+eval "$(oh-my-posh --init --shell bash --config /home/ewt/.config/oh-my-posh/posh-dverdonschot.omp.json)"
+
