@@ -1,0 +1,21 @@
+# Files in /home/ewt/.config/forgejo-runner/ that DO NOT get tracked
+# by yadm. Do not commit this file — it's documentation for the
+# ~/.gitignore in the runner config dir.
+#
+# Why this template exists:
+#   On the UM790 we ship modules/forgejo-runner/ from
+#   dverdonschot/fedora-cosmic-atomic-ewt. The runner's runtime
+#   config lives in ~/.config/forgejo-runner/ on the host (config.yaml,
+#   env file, etc.). Those are per-host, often per-user, regenerated
+#   by setup-forgejo-runner.sh. yadm should NEVER commit them.
+#
+# If you ever do want to track runner configs in yadm, put the actual
+#   /home/ewt/.config/forgejo-runner/.gitignore at:
+#     *
+#     !.gitignore
+#     !.gitignore-template
+#   which mirrors this template's intent.
+
+*
+!.gitignore
+!.gitignore-template
